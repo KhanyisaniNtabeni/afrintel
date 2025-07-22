@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrintel - Empowering Africa Through Intelligent Innovation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #60A5FA 0%, #93C5FD 100%);
+        }
+
+        .africa-map {
+            clip-path: path('M180,20 C160,40 140,80 160,120 C180,160 220,180 260,160 C300,140 320,100 300,60 C280,20 240,0 200,20 C180,30 180,20 180,20 Z');
+            background: linear-gradient(135deg, #60A5FA 0%, #E5E7EB 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .team-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #60A5FA;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .scroll-animation.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="fixed w-full bg-white shadow-md z-50 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img src="image/afri4.png" alt="Afrintel Logo" class="h-20 w-auto">
+        </div>
+
+
+        <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Home</a>
+            <a href="#about" class="nav-link text-gray-700 hover:text-gray-900 font-medium">About</a>
+            <a href="#services" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Services</a>
+            <a href="#team" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Team</a>
+            <a href="#contact" class="nav-link text-gray-700 hover:text-gray-900 font-medium">Contact</a>
+        </div>
+
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+            <a href="#home" class="text-gray-700 hover:text-gray-900 font-medium py-2">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-gray-900 font-medium py-2">About</a>
+            <a href="#services" class="text-gray-700 hover:text-gray-900 font-medium py-2">Services</a>
+            <a href="#team" class="text-gray-700 hover:text-gray-900 font-medium py-2">Team</a>
+            <a href="#contact" class="text-gray-700 hover:text-gray-900 font-medium py-2">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-blue-400">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 text-white mb-10 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Empowering Africa Through Intelligent Innovation</h1>
+            <p class="text-lg md:text-xl mb-8 opacity-90">Transforming industries with technology solutions tailored for African markets.</p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#services" class="bg-white text-blue-500 hover:bg-gray-100 font-medium py-3 px-6 rounded-lg transition duration-300 text-center">Our Services</a>
+                <a href="#contact" class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-500 font-medium py-3 px-6 rounded-lg transition duration-300 text-center">Get in Touch</a>
+            </div>
+        </div>
+        <div class="md:w-1/2 flex justify-center">
+            <div class="relative">
+                <svg class="w-64 h-64 md:w-80 md:h-80" viewBox="0 0 400 400">
+                    <path fill="#93C5FD" opacity="0.2" d="M200,20 C120,20 60,80 60,160 C60,240 120,300 200,300 C280,300 340,240 340,160 C340,80 280,20 200,20 Z"></path>
+                    <path fill="#E5E7EB" opacity="0.3" d="M180,40 C120,40 70,90 70,150 C70,210 120,260 180,260 C240,260 290,210 290,150 C290,90 240,40 180,40 Z"></path>
+                    <path fill="#60A5FA" opacity="0.4" d="M220,60 C160,60 110,110 110,170 C110,230 160,280 220,280 C280,280 330,230 330,170 C330,110 280,60 220,60 Z"></path>
+                    <path fill="none" stroke="#fff" stroke-width="3" d="M180,20 C160,40 140,80 160,120 C180,160 220,180 260,160 C300,140 320,100 300,60 C280,20 240,0 200,20 C180,30 180,20 180,20 Z"></path>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <span class="text-white text-4xl font-bold">Africa</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">About Us</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-gray-300 mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                <div class="scroll-animation">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Forward-Thinking African Innovation</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Afrintel is a forward-thinking African company dedicated to transforming industries through innovative technology, consulting services, and strategic solutions tailored for African markets.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        With a deep understanding of local challenges and global trends, we bridge the gap between innovation and impact — delivering scalable solutions across sectors like ICT, construction, mining, and software development.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Africa-first perspective</h4>
+                                <p class="text-sm text-gray-600">With global standards</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Agile solutions</h4>
+                                <p class="text-sm text-gray-600">Scalable & sustainable</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:w-1/2">
+                <div class="scroll-animation delay-300 bg-gray-100 p-8 rounded-lg shadow-lg">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Our Vision</h3>
+                        <p class="text-gray-600">To lead Africa's digital transformation by combining local insight with global technology trends.</p>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Our Mission</h3>
+                        <p class="text-gray-600">To empower businesses, communities, and governments across Africa with smart, scalable, and sustainable solutions.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Why Choose Afrintel?</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Africa-first perspective with global standards</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Cross-industry expertise</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Agile, scalable solutions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-600">Commitment to innovation & growth</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-16 md:py-24 bg-gray-100">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">What We Do</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-gray-300 mx-auto mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">Delivering innovative solutions across multiple sectors to drive Africa's technological advancement.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Service 1 -->
+            <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                <div class="h-3 bg-blue-400"></div>
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-lg bg-blue-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Technology & Software Development</h3>
+                    <p class="text-gray-600 mb-4">Custom software solutions, cloud architecture, system integration, and mobile-first applications tailored to African markets.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-medium inline-flex items-center">
+                        Learn more
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                <div class="h-3 bg-blue-400"></div>
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-lg bg-blue-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">IT Consulting & Digital Transformation</h3>
+                    <p class="text-gray-600 mb-4">Empowering businesses with strategy, infrastructure modernization, and intelligent automation using AI and data analytics.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-medium inline-flex items-center">
+                        Learn more
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                <div class="h-3 bg-blue-400"></div>
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-lg bg-blue-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Mining & Infrastructure Support</h3>
+                    <p class="text-gray-600 mb-4">Innovative tech-driven approaches to streamline operations, ensure compliance, and improve safety in key sectors.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-medium inline-flex items-center">
+                        Learn more
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                <div class="h-3 bg-blue-400"></div>
+                <div class="p-6">
+                    <div class="w-16 h-16 rounded-lg bg-blue-400 flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Product Incubation & Innovation</h3>
+                    <p class="text-gray-600 mb-4">We build future-ready digital products like Debime — our flagship financial automation platform — and more.</p>
+                    <a href="#" class="text-blue-500 hover:text-blue-600 font-medium inline-flex items-center">
+                        Learn more
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Leadership Team</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-gray-300 mx-auto mb-6"></div>
+            <p class="text-gray-600 max-w-2xl mx-auto">Meet the visionaries driving Afrintel's mission to transform Africa through technology.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Team Member 1 -->
+            <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                <div class="relative overflow-hidden h-64">
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path fill="#60A5FA" d="M0,0 L100,0 L100,80 C75,100 50,90 0,100 L0,0 Z"></path>
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-32 h-32 rounded-full bg-gray-300 border-4 border-white overflow-hidden">
+                            <svg class="w-full h-full text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-1 text-gray-800">Taylars Rikhotso</h3>
+                    <p class="text-blue-500 font-medium mb-4">Co-Chief Executive Officer, Debime</p>
+                    <p class="text-gray-600 mb-4">A seasoned entrepreneur with over 6 years of experience running Alltech Compliance, providing regulatory and business advisory services.</p>
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="text-gray-700 font-medium">Focus Areas:</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Business Strategy</span>
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Compliance Innovation</span>
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                <div class="relative overflow-hidden h-64">
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path fill="#E5E7EB" d="M0,0 L100,0 L100,80 C75,100 50,90 0,100 L0,0 Z"></path>
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-32 h-32 rounded-full bg-gray-300 border-4 border-white overflow-hidden">
+                            <img src="image/sk.jpg" alt="Afrintel Logo" class="w-full h-full object-cover">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-1 text-gray-800">Sikhulile Ndlovu</h3>
+                    <p class="text-blue-500 font-medium mb-4">Co-Chief Executive Officer, Debime</p>
+                    <p class="text-gray-600 mb-4">A dynamic business leader and social entrepreneur, Founder of Ntaba Holdings, with a strong background in investment banking and strategic finance.</p>
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="text-gray-700 font-medium">Focus Areas:</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Finance</span>
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Partnerships</span>
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Community Impact</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-card bg-white rounded-xl shadow-lg overflow-hidden transition duration-300">
+                <div class="relative overflow-hidden h-64">
+                    <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path fill="#60A5FA" d="M0,0 L100,0 L100,80 C75,100 50,90 0,100 L0,0 Z"></path>
+                    </svg>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-32 h-32 rounded-full bg-gray-300 border-4 border-white overflow-hidden">
+                            <img src="image/ntabza.jpeg" alt="Afri" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-1 text-gray-800">Luyanda Ntabeni</h3>
+                    <p class="text-blue-500 font-medium mb-4">Chief Technology Officer, Afrintel</p>
+                    <p class="text-gray-600 mb-4">A seasoned technology expert with over 10 years of experience designing and developing enterprise systems for banking and insurance industries.</p>
+                    <div class="border-t border-gray-200 pt-4">
+                        <p class="text-gray-700 font-medium">Focus Areas:</p>
+                        <div class="flex flex-wrap gap-2 mt-2">
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Software Architecture</span>
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Digital Transformation</span>
+                            <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full">Fintech Engineering</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-16 md:py-24 bg-blue-400">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 p-8 md:p-12">
+                    <h2 class="text-3xl font-bold mb-6 text-gray-800">Get in Touch</h2>
+                    <p class="text-gray-600 mb-8">Have a project or want to partner with us? We'd love to hear from you.</p>
+
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Your name">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="your@email.com">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="How can we help you?"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="button" class="w-full bg-blue-400 text-white font-medium py-3 px-6 rounded-lg hover:bg-blue-500 transition duration-300">Send Message</button>
+                            <p class="text-xs text-gray-500 mt-2 text-center">This is a demo form. In a real implementation, this would send your message to Afrintel.</p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="md:w-1/2 bg-gray-100 p-8 md:p-12">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">Contact Information</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Email</h4>
+                                <a href="mailto:info@afrintel.co.za" class="text-blue-500 hover:text-blue-600">info@afrintel.co.za</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Location</h4>
+                                <p class="text-gray-600">Johannesburg, South Africa</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center mr-4 mt-1 flex-shrink-0">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Website</h4>
+                                <a href="http://afrintel.co.za" target="_blank" class="text-blue-500 hover:text-blue-600">afrintel.co.za</a>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 mt-6 border-t border-gray-200">
+                            <h4 class="font-medium text-gray-800 mb-4">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 hover:bg-blue-100 flex items-center justify-center transition duration-300">
+                                    <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 hover:bg-blue-100 flex items-center justify-center transition duration-300">
+                                    <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                                    </svg>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 hover:bg-blue-100 flex items-center justify-center transition duration-300">
+                                    <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between">
+            <div class="mb-8 md:mb-0">
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-blue-400 flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">A</span>
+                    </div>
+                    <span class="text-2xl font-bold">Afrintel</span>
+                </div>
+                <p class="text-gray-400 max-w-xs">Empowering Africa Through Intelligent Innovation</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+                        <li><a href="#team" class="text-gray-400 hover:text-white transition duration-300">Team</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Software Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">IT Consulting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Mining Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Product Incubation</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:info@afrintel.co.za" class="text-gray-400 hover:text-white transition duration-300">info@afrintel.co.za</a>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span class="text-gray-400">Johannesburg, South Africa</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
+                            </svg>
+                            <a href="http://afrintel.co.za" target="_blank" class="text-gray-400 hover:text-white transition duration-300">afrintel.co.za</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 Afrintel. All rights reserved.</p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('py-2');
+            navbar.classList.remove('py-3');
+        } else {
+            navbar.classList.add('py-3');
+            navbar.classList.remove('py-2');
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
+    });
+
+    // Scroll animations
+    const scrollElements = document.querySelectorAll('.scroll-animation');
+
+    const elementInView = (el, percentageScroll = 100) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <=
+            ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
+        );
+    };
+
+    const displayScrollElement = (element) => {
+        element.classList.add('active');
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 80)) {
+                displayScrollElement(el);
+            }
+        });
+    };
+
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+    });
+
+    // Initialize animations on load
+    window.addEventListener('load', () => {
+        handleScrollAnimation();
+    });
+
+    // Form submission (demo)
+    const contactForm = document.querySelector('form');
+    const submitButton = contactForm.querySelector('button');
+
+    submitButton.addEventListener('click', () => {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+
+        if (nameInput.value && emailInput.value && messageInput.value) {
+            submitButton.textContent = 'Message Sent!';
+            submitButton.classList.add('bg-green-500');
+            submitButton.classList.remove('bg-blue-400');
+
+            // Reset form
+            setTimeout(() => {
+                nameInput.value = '';
+                emailInput.value = '';
+                messageInput.value = '';
+                submitButton.textContent = 'Send Message';
+                submitButton.classList.remove('bg-green-500');
+                submitButton.classList.add('bg-blue-400');
+            }, 3000);
+        } else {
+            alert('Please fill in all fields');
+        }
+    });
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'961be73361c4da14',t:'MTc1Mjk0NTc2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
